@@ -1,0 +1,708 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Lern- und Lebensraum Schule";
+}
+
+<style>
+    progress#pUone {
+        width: 100px;
+    }
+
+    progress#pUtwo {
+        width: 150px;
+    }
+
+    progress#pUthree {
+        width: 220px;
+    }
+
+    /*.vert{
+        height: 50px;
+    }*/
+
+    div#buttom {
+        padding-top: 60px;
+        background-color: white;
+    }
+
+    div#top {
+        background-color: #408b0e;
+    }
+
+    tr {
+        text-align: left;
+    }
+
+    input {
+        margin-right: 30px;
+    }
+
+    table#points {
+        position: fixed;
+        top: 60px;
+        left: 1px;
+        background-color: #a6a6a6;
+        -webkit-border-top-left-radius: 10px;
+        -webkit-border-top-right-radius: 10px;
+        -webkit-border-bottom-left-radius: 10px;
+        -webkit-border-bottom-right-radius: 10px;
+        /*right: 100px;*/
+        /*-webkit-transform: rotate(90deg);*/
+    }
+
+    td#g1 {
+        /*margin-left: 20px;*/
+        padding-left: 10px;
+    }
+
+    td#g2 {
+        /*margin-left: 20px;*/
+        padding-left: 10px;
+    }
+
+    td#g3 {
+        /*margin-left: 20px;*/
+        padding-left: 10px;
+    }
+
+    .vert {
+        /*border-radius: 10px;*/
+    }
+</style>
+
+<script>
+    function UpdateProgressBars2() {
+        var pointCount = 0;
+        var IDs = [
+                    "inputU1A",
+                    "inputU1B",
+                    "inputU1C",
+                    "inputU1D",
+                    "inputU2A",
+                    "inputU2B",
+                    "inputU2C",
+                    "inputU2D",
+                    "inputU3A",
+                    "inputU3B",
+                    "inputU3C",
+                    "inputU3D",
+                    "inputU4A",
+                    "inputU4B",
+                    "inputU4C",
+                    "inputU4D",
+                    "inputU5A",
+                    "inputU5B",
+                    "inputU5C",
+                    "inputU5D",
+                    "inputU6A",
+                    "inputU6B",
+                    "inputU7A",
+                    "inputU7B",
+
+                    "inputU8A",
+                    "inputU8B",
+
+                    "inputU9A",
+                    "inputU9B",
+
+                    "inputU10A",
+                    "inputU10B",
+
+                    "inputU11A",
+                    "inputU11B",
+
+                    "inputU12A",
+                    "inputU12B",
+
+                    "inputU13A",
+                    "inputU13B",
+
+                    "inputU14A",
+                    "inputU14B",
+
+                    "inputU15A",
+                    "inputU15B",
+
+                    "inputU16A",
+                    "inputU16B",
+
+                    "inputU17A",
+                    "inputU17B",
+
+                    "inputU18A",
+                    "inputU18B",
+                    "inputU18C",
+                    "inputU18D",
+                    "inputU19A",
+                    "inputU19B",
+
+                    "inputU20A",
+                    "inputU20B",
+                    "inputU20C",
+                    "inputU20D",
+                    "inputU21A",
+                    "inputU21B",
+
+                    "inputU22A",
+                    "inputU22B",
+
+        ];
+
+        for (i = 0; i < IDs.length; i++) {
+            var id = IDs[i];
+            var radio = document.getElementById(id);
+
+            if (radio.checked == true) {
+                pointCount = (+pointCount) + (+radio.value);
+            }
+        }
+
+        var v = document.getElementById("pUone");
+        v.value = pointCount;
+
+        var v = document.getElementById("pUtwo");
+        v.value = pointCount;
+
+        var v = document.getElementById("pUthree");
+        v.value = pointCount;
+
+
+    }
+
+    function Test() {
+        window.alert("Test");
+    }
+
+    /**Daten an Überischt übertragen**/
+    function Fertig() {
+
+
+    }
+
+</script>
+
+<div id="top" class="jumbotron">
+    <img src="@Url.Content("~/Images/logo_bewegte_schule_klein.png")">
+
+    <h1>Lern- und Lebensraum Schule</h1>
+
+    <h2>Schulische Innen- und Außenräume bewegungsfreundlich gestalten</h2>
+    <hr>
+    <p class="lead"></p>
+
+    <fieldset>
+        <p>
+            <b>L1 Es gibt ausgewiesene Flächen für Bewegung und Entspannung im Klassenraum</b>
+            <fieldset>
+                <table style="width:100%">
+                    <tr>
+                        <td><input onclick="UpdateProgressBars2()" id="inputU1A" name="inputU1" value=0 type="Radio"> Nein</td>
+
+                    </tr>
+                    <tr>
+                        <td><input onclick="UpdateProgressBars2()" id="inputU1B" name="inputU1" value=1 type="Radio"> vereinzelt</td>
+
+                    </tr>
+                    <tr>
+                        <td><input onclick="UpdateProgressBars2()" id="inputU1C" name="inputU1" value=2 type="Radio"> in mehr als der Hälfte der Klassen</td>
+
+                    </tr>
+                    <tr>
+                        <td><input onclick="UpdateProgressBars2()" id="inputU1D" name="inputU1" value=3 type="Radio"> in allen Klassen</td>
+                    </tr>
+                </table>
+            </fieldset>
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L2 Die ergonomischen Aspekte eines gesunden Arbeitsplatzes werden hinsichtlich Licht, Akustik, Luft und Farbe beachtet</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU2A" name="inputU2" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU2B" name="inputU2" value=1 type="Radio"> vereinzelt</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU2C" name="inputU2" value=2 type="Radio"> in mehr als der Hälfte der Klassen</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU2D" name="inputU2" value=3 type="Radio"> in allen Klassen</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L3 In Klassenräumen gibt es Bewegungsgeräte wie Gummitwist, Jongliergeräte, Balanceboards…</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU3A" name="inputU3" value=0 type="Radio"> Ja</td>
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU3B" name="inputU3" value=1 type="Radio"> vereinzelt</td>
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU3C" name="inputU3" value=2 type="Radio"> in mehr als der Hälfte der Klassen</td>
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU3D" name="inputU3" value=3 type="Radio"> in allen Klassen</td>
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L4 Dynamisches und bewegtes Sitzen wird unabhängig der Klassenausstattung ermöglicht. Es gibt Möglichkeiten zum Stehen, Liegen...</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU4A" name="inputU4" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU4B" name="inputU4" value=1 type="Radio"> vereinzelt</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU4C" name="inputU4" value=2 type="Radio"> in mehr als der Hälfte der Klassen</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU4D" name="inputU4" value=3 type="Radio"> in allen Klassen</td>
+
+                </tr>
+            </table>
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L5 Ergonomische Ausstattung. Es gibt z.B.: Stehpulte, höhenverstellbare Tische und Stühle, Sitzkissen, Hocker…</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU5A" name="inputU5" value=0 type="Radio"> nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU5B" name="inputU5" value=1 type="Radio"> vereinzelt</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU5C" name="inputU5" value=2 type="Radio"> in mehr als der Hälfte der Klassen</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU5D" name="inputU5" value=3 type="Radio"> in allen Klassen</td>
+
+                </tr>
+            </table>
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L6 Gang und Aula bieten Bewegungsverführungen. Es gibt z. B.: Balanciermöglichkeiten, Hangelleiter, Kletterwände, Tischtennistische, Fußballtische, Slackline…</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU6A" name="inputU6" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU6B" name="inputU6" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L7 Gang und Aula werden während des Unterrichts für bewegtes Lernen genützt</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU7A" name="inputU7" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU7B" name="inputU7" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L8 Ruhe- und Entspannungszonen sind vorhanden</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU8A" name="inputU8" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU8B" name="inputU8" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L9 Es gibt strukturierte und gekennzeichnete Pausenbereiche. (Z.B.: Aktivzonen, Ruhezonen, Gerätezonen…</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU9A" name="inputU9" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU9B" name="inputU9" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L10 Es gibt ausgewiesenen Ruheräume für Lehrpersonen</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU10A" name="inputU10" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU10B" name="inputU10" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L11 Es gibt strukurierte  und gekennzeichnete Außenbereiche. (Z.B.: Aktivzonen, Ruhezonen, Gerätezonen…)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU11A" name="inputU11" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU11B" name="inputU11" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L12 Der Außenbereich wird während des Unterrichts zum Lernen in Bewegung genützt</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU12A" name="inputU12" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU12B" name="inputU12" value=1 type="Radio"> vereinzelt</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU12C" name="inputU12" value=2 type="Radio"> von mehr als der Hälfte der Klassen</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU12D" name="inputU12" value=3 type="Radio"> von allen Klassen</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L13 Fixierte Bewegungsstationen für Gleichgewicht sind vorhanden. (Z.B.: Baumstämme, Slackline, Holzpalisaden, Steine…)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU13A" name="inputU13" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU13B" name="inputU13" value=1 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L14 Fixierte Bewegungsstationen zum Klettern und Hangeln zur Ausbildung der Selbstsicherungsfähigkeit in Wagnissituationen sind vorhanden. (Z.B.: Bäume, Kletterwand, Hangelleiter, Reckstangen…)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU14A" name="inputU14" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU14B" name="inputU14" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L15 Fixe Bereiche für Trendsportarten sind vorhanden. (Z.B.: Beachvolleyballplatz, Skaterpark, Funcourt…)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU15A" name="inputU15" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU15B" name="inputU15" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L16 Reizevolle Spielgeräte stehen zur Verfügung. (Z.B.: Pausenkiste, Wakeboards, Einräder, Stelzen, Hüpfbälle…)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU16A" name="inputU16" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU16B" name="inputU16" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L17 Öffnung des Außenbereiches für die Allgemeinheit</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU17A" name="inputU17" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU17B" name="inputU17" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L18 Die große Pause findet im Freien statt </b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU18A" name="inputU18" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU18B" name="inputU18" value=1 type="Radio"> vereinzelt</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU18C" name="inputU18" value=2 type="Radio"> mindestens 2x pro Woche </td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU18D" name="inputU18" value=3 type="Radio"> überwiegend</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L19 Bewegter Schulweg. (Z.B.: Bewegungsverführungen, Pedibus…)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU19A" name="inputU19" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU19B" name="inputU19" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L20 Es gibt ein gesundes Jausenangebot. (Z.B.: Schulobst, Vollkornprodukte…)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU20A" name="inputU20" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU20B" name="inputU20" value=1 type="Radio"> mindestens 1x im Monat</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU20C" name="inputU20" value=2 type="Radio"> mindestens 1x pro Woche</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU20D" name="inputU20" value=3 type="Radio"> täglich</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L21 Es wird eine warme Mittagsmahlzeit mit  hochwertigen regionalen Produkten angeboten</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU21A" name="inputU21" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU21B" name="inputU21" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>L22 Das Trinken ist den Schülerinnen und Schülern während des Unterrichts erlaubt</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU22A" name="inputU22" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars2()" id="inputU22B" name="inputU22" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <table id="points" style="width:20%">
+        <tr>
+            <td id="g1"><h5><b>Gütesiegel Teil I</b></h5></td>
+            <td><progress class="vert" id="pUone" value=0 max="10"></progress></td>
+
+        </tr>
+        <tr>
+            <td id="g2"><h5><b>Gütesiegel Teil II</b></h5></td>
+            <td><progress class="vert" id="pUtwo" value=0 max="24"></progress></td>
+
+        </tr>
+        <tr>
+            <td id="g3"><h5><b>Gütesiegel Teil III</b></h5></td>
+            <td><progress class="vert" id="pUthree" value=0 max="50"></progress></td>
+
+        </tr>
+    </table>
+    @*<hr />*@
+    <p onclick="Fertig()"><a href=@Url.Action("Uebersicht", "Home") class="btn btn-primary btn-lg">Fertig &raquo;</a></p>

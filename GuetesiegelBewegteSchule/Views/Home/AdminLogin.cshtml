@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_Start.cshtml";
+    ViewBag.Title = "Admin Login";
+}
+
+
+<div id="top" class="jumbotron">
+    <style>
+        h3#text1 {
+        }
+
+        div#top {
+            background-color: white;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function CheckInput() {
+
+            var input = document.getElementById("adminPass");
+
+            if (input.textContent.localeCompare("admin")) {
+                window.open("http://localhost:55488/Home/Uebersicht", "_self")
+                //window.alert("Passwort inkorrekt");
+            }
+
+        }
+    </script>
+
+    <img src="@Url.Content("~/Images/logo_bewegte_schule_klein.png")">
+
+    <h3 id="text1">Admin Passwort:</h3>
+    @*<h4 id="text2">Admin Passwort:</h4>*@
+
+    <input type="password" name="adminPass" id="adminPass"><br>
+
+    <p class="lead"></p>
+
+    <p onclick="CheckInput()"><a href=@Url.Action("Uebersicht", "Home") class="btn btn-primary btn-lg">Weiter &raquo;</a></p>
+</div>
+
+

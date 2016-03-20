@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_Start.cshtml";
+    ViewBag.Title = "Login";
+}
+
+
+<div id="top" class="jumbotron">
+    <style>
+        h3#text1 {
+        }
+
+        div#top {
+            background-color: white;
+            text-align: center;
+        }
+        p#input{
+            /*background-color : red;*/
+        }
+    </style>
+
+    <script>
+        function CheckInput() {
+
+            var input = document.getElementById("SKZ");
+            
+            if (input.value == ""){
+                window.alert("Sie müssen eine Schulkennzahl eingeben um fortzufahren");
+            } else {
+                if (input.value.localeCompare("admin") == 0) {
+                    input.value = "";
+                    window.open("http://localhost:55488/Home/AdminLogin", "_self");
+                } else {
+                    input.value = "";
+                    window.open("http://localhost:55488/Home/SchuldatenEingabe", "_self");
+                }
+            }
+
+        }
+    </script>
+
+    <img src="@Url.Content("~/Images/logo_bewegte_schule_klein.png")">
+
+    <h3 id="text1">Willkommen zum Gütesiegel "Bewegte Schule Österreich"</h3>
+    <h4 id="text2">Bitte geben Sie Ihre Schulkennzahl ein:</h4>
+
+    <input type="text" name="SKZ" id="SKZ"><br>
+
+    <p class="lead"></p>
+
+    <p onclick="CheckInput()" id="input" class="btn btn-primary btn-lg" Weiter &raquo;>Weiter</p>
+</div>
+
+

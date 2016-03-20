@@ -1,0 +1,701 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Lehren und Lernen";
+}
+
+<style>
+    progress#pUone {
+        width: 100px;
+    }
+
+    progress#pUtwo {
+        width: 150px;
+    }
+
+    progress#pUthree {
+        width: 220px;
+    }
+
+    /*.vert{
+        height: 50px;
+    }*/
+
+    div#buttom {
+        padding-top: 60px;
+        background-color: white;
+    }
+
+    div#top {
+        background-color: #3398ff;
+    }
+
+    tr {
+        text-align: left;
+    }
+
+    input {
+        margin-right: 30px;
+    }
+
+    table#points {
+        position: fixed;
+        top: 60px;
+        left: 1px;
+        background-color: #a6a6a6;
+        -webkit-border-top-left-radius: 10px;
+        -webkit-border-top-right-radius: 10px;
+        -webkit-border-bottom-left-radius: 10px;
+        -webkit-border-bottom-right-radius: 10px;
+        /*right: 100px;*/
+        /*-webkit-transform: rotate(90deg);*/
+    }
+
+    td#g1 {
+        /*margin-left: 20px;*/
+        padding-left: 10px;
+    }
+
+    td#g2 {
+        /*margin-left: 20px;*/
+        padding-left: 10px;
+    }
+
+    td#g3 {
+        /*margin-left: 20px;*/
+        padding-left: 10px;
+    }
+
+    .vert {
+        /*border-radius: 10px;*/
+    }
+</style>
+
+<script>
+    function UpdateProgressBars() {
+        var pointCount = 0;
+        var IDs = [
+                    "inputU1A",
+                    "inputU1B",
+                    "inputU1C",
+                    "inputU2A",
+                    "inputU2B",
+                    "inputU2C",
+                    "inputU2D",
+                    "inputU3A",
+                    "inputU3B",
+                    "inputU4A",
+                    "inputU4B",
+                    "inputU5A",
+                    "inputU5B",
+                    "inputU5C",
+                    "inputU6A",
+                    "inputU6B",
+                    "inputU6C",
+                    "inputU6D",
+                    "inputU7A",
+                    "inputU7B",
+                    "inputU7C",
+                    "inputU7D",
+                    "inputU8A",
+                    "inputU8B",
+                    "inputU9A",
+                    "inputU9B",
+                    "inputU9C",
+                    "inputU9D",
+                    "inputU10A",
+                    "inputU10B",
+                    "inputU10C",
+                    "inputU10D",
+                    "inputU11A",
+                    "inputU11B",
+                    "inputU11C",
+                    "inputU11D",
+                    "inputU12A",
+                    "inputU12B",
+                    "inputU12C",
+                    "inputU12D",
+                    "inputU13A",
+                    "inputU13B",
+                    "inputU13C",
+                    "inputU13D",
+                    "inputU14A",
+                    "inputU14B",
+                    "inputU14C",
+                    "inputU14D",
+                    "inputU15A",
+                    "inputU15B",
+                    "inputU15C",
+                    "inputU15D",
+                    "inputU16A",
+                    "inputU16B",
+                    "inputU16C",
+                    "inputU16D",
+                    "inputU17A",
+                    "inputU17B",
+                    "inputU17C",
+                    "inputU17D",
+                    "inputU18A",
+                    "inputU18B",
+                    "inputU18C",
+                    "inputU18D",
+                    "inputU19A",
+                    "inputU19B",
+                    "inputU19C",
+                    "inputU19D"
+        ];
+
+        for (i = 0; i < IDs.length; i++) {
+            var id = IDs[i];
+            var radio = document.getElementById(id);
+
+            if (radio.checked == true) {
+                pointCount = (+pointCount) + (+radio.value);
+            }
+        }
+
+        var v = document.getElementById("pUone");
+        v.value = pointCount;
+
+
+        var v = document.getElementById("pUtwo");
+        v.value = pointCount;
+
+        var v = document.getElementById("pUthree");
+        v.value = pointCount;
+
+
+    }
+
+    /**Daten an Überischt übertragen**/
+    function Fertig() {
+
+    }
+
+</script>
+
+
+<div id="top" class="jumbotron">
+
+    <img src="@Url.Content("~/Images/logo_bewegte_schule_klein.png")">
+
+    <h1>Lehren und Lernen</h1>
+
+    <h2>Lernen mit Bewegung</h2>
+    <hr>
+    <p class="lead"></p>
+
+    <fieldset>
+        <p>
+            <b>U1 Vor Unterrichtsbeginn stehen am Morgen beaufsichtigte Bewegungsangebote zur Verfügung</b>
+            <fieldset>
+                <table style="width:100%">
+                    <tr>
+                        <td><input onclick="UpdateProgressBars()" id="inputU1A" name="inputU1" value=0 type="Radio"> Nein</td>
+
+                    </tr>
+                    <tr>
+                        <td><input onclick="UpdateProgressBars()" id="inputU1B" name="inputU1" value=1 type="Radio"> 15 Minuten vor Unterrichtsbeginn</td>
+
+                    </tr>
+                    <tr>
+                        <td><input onclick="UpdateProgressBars()" id="inputU1C" name="inputU1" value=2 type="Radio"> 30 Minuten vor Unterrichtsbeginn</td>
+
+                    </tr>
+                </table>
+            </fieldset>
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U2 Große bewegte Pause</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU2A" name="inputU2" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU2B" name="inputU2" value=1 type="Radio"> 20 Minuten</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU2C" name="inputU2" value=2 type="Radio"> 25 Minuten</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU2D" name="inputU2" value=3 type="Radio"> 30 Minuten</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U3 Pausengeräte und Bewegungsverführungen stehen den Schülern in den Pausen zur Verfügung ( Pausenspielekiste, …)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU3A" name="inputU3" value=1 type="Radio"> Ja</td>
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU3B" name="inputU3" value=0 type="Radio"> Nein</td>
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U4 Eine angemessene Pausenplatzgröße steht zur Verfügung, eventuell auch durch eine Erweiterung auf Turnhalle und Außenfläche</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU4A" name="inputU4" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU4B" name="inputU4" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U5 Wechsel der Lernformen durch Einzel- Partner- und Gruppenarbeiten. Verwendet werden dazu z.B.: Stehtische, Sesselkreise, Pausenhalle, Gang, Ruhezonen…</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU5A" name="inputU5" value=1 type="Radio"> mindestens in einer Klasse</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU5B" name="inputU5" value=2 type="Radio"> täglich in einigen Klassen</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU5C" name="inputU5" value=3 type="Radio"> täglich in allen Klassen</td>
+
+                </tr>
+            </table>
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U6 Unterrichtssequenzen werden mit bewegtem Lernen zur Festigung und Wiederholung von Inhalten rhythmisiert</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU6A" name="inputU6" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU6B" name="inputU6" value=1 type="Radio"> mindestens in einer Klasse</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU6C" name="inputU6" value=2 type="Radio"> täglich in einigen Klassen</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU6D" name="inputU6" value=3 type="Radio"> täglich in allen Klassen</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U7 Nützung von Bewegungsangeboten während des Unterrichts (z.B.: Jonglierbälle, Jongliertücher, Sitzbälle, Softfrisbees, Karteikarten mit Bewegungsübungen, …)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU7A" name="inputU7" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU7B" name="inputU7" value=1 type="Radio"> mindestens in einer Klasse</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU7C" name="inputU7" value=2 type="Radio"> täglich in einigen Klassen</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU7D" name="inputU7" value=3 type="Radio"> täglich in allen Klassen</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U8 Die Schule organisiert Bewegungsangebote außerhalb der Unterrichtszeite</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU8A" name="inputU8" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU8B" name="inputU8" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U9 Turnstunden finden in allen Klassen statt</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU9A" name="inputU9" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU9B" name="inputU9" value=1 type="Radio"> 2x pro Woche </td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU9C" name="inputU9" value=2 type="Radio"> 3-4x pro Woche</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU9D" name="inputU9" value=3 type="Radio"> täglich </td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U10 Verwendung von Turngeräten wie Taue, Kletterleitern, Kästen, Langbänke, Reck…</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU10A" name="inputU10" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU10B" name="inputU10" value=1 type="Radio"> wöchentlich in einer Klasse</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU10C" name="inputU10" value=2 type="Radio"> wöchentlich in einigen Klassen</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU10D" name="inputU10" value=3 type="Radio"> wöchentlich in allen Klassen</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U11 10 minütiges Bewegungsangebot findet im Unterricht statt</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU11A" name="inputU11" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU11B" name="inputU11" value=1 type="Radio"> mindestens in einer Klasse</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU11C" name="inputU11" value=2 type="Radio"> täglich in einigen Klassen</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU11D" name="inputU11" value=3 type="Radio"> täglich in allen Klassen</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U12 Lerninhalte werden mit Bewegung kombiniert </b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU12A" name="inputU12" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU12B" name="inputU12" value=1 type="Radio"> mindestens in einer Klasse</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU12C" name="inputU12" value=2 type="Radio"> täglich in einigen Klassen</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU12D" name="inputU12" value=3 type="Radio"> täglich in allen Klassen</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U13 Aufsuchen von außerschulischen Bewegungsangeboten (Fußballplatz, Eislaufplatz, Freibad, Kletterhalle ...)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU13A" name="inputU13" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU13B" name="inputU13" value=1 type="Radio"> mindestens eine Klasse pro Semester</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU13C" name="inputU13" value=2 type="Radio"> einige Klassen pro Semester</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU13D" name="inputU13" value=3 type="Radio"> alle Klassen 1x pro Semester</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U14 Aufsuchen von außerschulischen Lernorten  durch Exkursionen, Lehrausgänge…</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU14A" name="inputU14" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU14B" name="inputU14" value=1 type="Radio"> mindestens eine Klasse pro Semester</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU14C" name="inputU14" value=2 type="Radio"> einige Klassen pro Semestern</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU14D" name="inputU14" value=3 type="Radio"> alle Klassen 1x pro Semester</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U15 Einladen von außerschulischen Bewegungsexperten (Sportvereine, Spitzensportler…)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU15A" name="inputU15" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU15B" name="inputU15" value=1 type="Radio"> mindestens eine Klasse pro Jahr</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU15C" name="inputU15" value=2 type="Radio"> einige Klassen pro Jahr</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU15D" name="inputU15" value=3 type="Radio"> alle Klassen 1x pro Jahr</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U16 In der Nachmittagsbereuung gibt es Bewegungsangebote</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU16A" name="inputU16" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU16B" name="inputU16" value=1 type="Radio"> einmal pro Woche</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU16C" name="inputU16" value=2 type="Radio"> täglich einmal</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU16D" name="inputU16" value=3 type="Radio"> mehrmals täglich</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U17 Steigern der Aufmerksamkeit und Konzentration durch kurze Bewegungsimpulse (1-3 min.)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU17A" name="inputU17" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU17B" name="inputU17" value=1 type="Radio"> mindestens in einer Klasse</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU17C" name="inputU17" value=2 type="Radio"> täglich in einigen Klassen</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU17D" name="inputU17" value=3 type="Radio"> täglich in allen Klassen</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U18 Die Schülerinnen und Schüler erhalten Bewegungshausaufgaben </b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU18A" name="inputU18" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU18B" name="inputU18" value=1 type="Radio"> mindestens in einer Klasse</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU18C" name="inputU18" value=2 type="Radio"> wöchentlich in einigen Klassen</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU18D" name="inputU18" value=3 type="Radio"> wöchtentlich in allen Klassen</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>U19 Schülerinnen und Schüler entwickeln eigene Bewegungsimpulse und geben diese an andere weiter</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU19A" name="inputU19" value=0 type="Radio"> Nein</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU19B" name="inputU19" value=1 type="Radio"> mindestens in einer Klasse</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU19C" name="inputU19" value=2 type="Radio"> wöchentlich in einigen Klassen</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU19D" name="inputU19" value=3 type="Radio"> wöchtentlich in allen Klassen</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <table id="points" style="width:20%">
+        <tr>
+            <td id="g1"><h5><b>Gütesiegel Teil I</b></h5></td>
+            <td><progress class="vert" id="pUone" value=0 max="10"></progress></td>
+
+        </tr>
+        <tr>
+            <td id="g2"><h5><b>Gütesiegel Teil II</b></h5></td>
+            <td><progress class="vert" id="pUtwo" value=0 max="24"></progress></td>
+
+        </tr>
+        <tr>
+            <td id="g3"><h5><b>Gütesiegel Teil III</b></h5></td>
+            <td><progress class="vert" id="pUthree" value=0 max="50"></progress></td>
+
+        </tr>
+    </table>
+    @*<hr />*@
+    <p onclick="Fertig()"><a href=@Url.Action("Uebersicht", "Home") class="btn btn-primary btn-lg">Fertig &raquo;</a></p>

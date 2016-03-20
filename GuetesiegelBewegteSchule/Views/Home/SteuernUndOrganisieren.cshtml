@@ -1,0 +1,710 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Steuern und Organisieren";
+}
+
+<style>
+    progress#pUone {
+        width: 100px;
+    }
+
+    progress#pUtwo {
+        width: 150px;
+    }
+
+    progress#pUthree {
+        width: 220px;
+    }
+
+    /*.vert{
+        height: 50px;
+    }*/
+
+    div#buttom {
+        padding-top: 60px;
+        background-color: white;
+    }
+
+    div#top {
+        background-color: #dc3d3d;
+    }
+
+    tr {
+        text-align: left;
+    }
+
+    input {
+        margin-right: 30px;
+    }
+
+    table#points {
+        position: fixed;
+        top: 60px;
+        left: 1px;
+        background-color: #a6a6a6;
+        -webkit-border-top-left-radius: 10px;
+        -webkit-border-top-right-radius: 10px;
+        -webkit-border-bottom-left-radius: 10px;
+        -webkit-border-bottom-right-radius: 10px;
+        /*right: 100px;*/
+        /*-webkit-transform: rotate(90deg);*/
+    }
+
+    td#g1 {
+        /*margin-left: 20px;*/
+        padding-left: 10px;
+    }
+
+    td#g2 {
+        /*margin-left: 20px;*/
+        padding-left: 10px;
+    }
+
+    td#g3 {
+        /*margin-left: 20px;*/
+        padding-left: 10px;
+    }
+
+    .vert {
+        /*border-radius: 10px;*/
+    }
+</style>
+
+<script>
+    function UpdateProgressBars() {
+        var pointCount = 0;
+        var IDs = [
+                    "inputU1A",
+                    "inputU1B",
+
+                    "inputU2A",
+                    "inputU2B",
+
+                    "inputU3A",
+                    "inputU3B",
+
+                    "inputU4A",
+                    "inputU4B",
+
+                    "inputU5A",
+                    "inputU5B",
+
+                    "inputU6A",
+                    "inputU6B",
+
+                    "inputU7A",
+                    "inputU7B",
+
+                    "inputU8A",
+                    "inputU8B",
+
+                    "inputU9A",
+                    "inputU9B",
+
+                    "inputU10A",
+                    "inputU10B",
+
+                    "inputU11A",
+                    "inputU11B",
+
+                    "inputU12A",
+                    "inputU12B",
+
+                    "inputU13A",
+                    "inputU13B",
+
+                    "inputU14A",
+                    "inputU14B",
+
+                    "inputU15A",
+                    "inputU15B",
+
+                    "inputU16A",
+                    "inputU16B",
+
+                    "inputU17A",
+                    "inputU17B",
+
+                    "inputU18A",
+                    "inputU18B",
+
+                    "inputU19A",
+                    "inputU19B",
+
+                    "inputU20A",
+                    "inputU20B",
+
+                    "inputU21A",
+                    "inputU21B",
+
+                    "inputU22A",
+                    "inputU22B",
+
+                    "inputU23A",
+                    "inputU23B",
+
+                    "inputU24A",
+                    "inputU24B",
+
+                    "inputU25A",
+                    "inputU25B",
+        ];
+
+        for (i = 0; i < IDs.length; i++) {
+            var id = IDs[i];
+            var radio = document.getElementById(id);
+
+            if (radio.checked == true) {
+                pointCount = (+pointCount) + (+radio.value);
+            }
+        }
+
+        //window.alert(pointCount.toString());
+        var v = document.getElementById("pUone");
+        v.value = pointCount;
+
+        //if (v.value == v.max){
+        //    window.alert("Gütesiegel Teil I wurde erreicht");
+        //}
+
+        var v = document.getElementById("pUtwo");
+        v.value = pointCount;
+
+        var v = document.getElementById("pUthree");
+        v.value = pointCount;
+
+
+    }
+
+    /**Daten an Überischt übertragen**/
+    function Fertig() {
+
+
+    }
+
+</script>
+
+<div id="top" class="jumbotron">
+    <img src="@Url.Content("~/Images/logo_bewegte_schule_klein.png")">
+
+    <h1>Steuern und Organisieren</h1>
+
+    <h2>Organisatorische Rahmenbedingungen für eine Bewegte Schule</h2>
+    <hr>
+    <p class="lead"></p>
+
+    <fieldset>
+        <p>
+            <b>S1 Die bewegte Schulkultur ist im Schulprofil oder Schulleitbild verankert und die Nachhaltigkeit gesichert</b>
+            <fieldset>
+                <table style="width:100%">
+                    <tr>
+                        <td><input onclick="UpdateProgressBars()" id="inputU1A" name="inputU1" value=1 type="Radio"> Ja</td>
+
+                    </tr>
+                    <tr>
+                        <td><input onclick="UpdateProgressBars()" id="inputU1B" name="inputU1" value=0 type="Radio"> Nein</td>
+
+                    </tr>
+                </table>
+            </fieldset>
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S2 Auflösung des starren 50-Minuten-Taktes zugunsten einer lehr- und lernfördernden Rhythmisierung</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU2A" name="inputU2" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU2B" name="inputU2" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S3 Verzicht auf die Fünf-Minuten-Wechselpause zwischen den Unterrichtseinheiten zugunsten einer Verlängerung der großen Pause.</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU3A" name="inputU3" value=1 type="Radio"> Ja</td>
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU3B" name="inputU3" value=0 type="Radio"> Nein</td>
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S4 Es gibt individuelle und klassenbezogene Bewegungspausen während des Unterrichts</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU4A" name="inputU4" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU4B" name="inputU4" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S5 Die große Pause hat eine Länge von mindestens 20 Minuten</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU5A" name="inputU5" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU5B" name="inputU5" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>Es gibt in der großen Pause keine Lehrer-Schüler-Gespräche, keine Lehrer-Eltern-Gespräche und keine Leiterbesprechungen</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU6A" name="inputU6" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU6B" name="inputU6" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S7 Die Pausenglocke wird nur mehr zu markanten Beginnzeiten eingesetzt. (Z.B.: Beginn des Unterrichts am Morgen, Beginn und Ende der großen Pause)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU7A" name="inputU7" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU7B" name="inputU7" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S8 Es gibt eine/n Koordinator/in für die bewegte Schule</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU8A" name="inputU8" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU8B" name="inputU8" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S9 Es gibt eine Steuergruppe für die bewegte Schule</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU9A" name="inputU9" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU9B" name="inputU9" value=0 type="Radio"> Nein </td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S10 Es finden Schulveranstaltungen mit bewegungsorientierten Schwerpunkten statt. (Z.B.: Sommer-, Wintersportwochen, Schulfeste, Aktionstage, …)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU10A" name="inputU10" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU10B" name="inputU10" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S11 Es finden min. 1x pro Semester für alle Klassen Wandertage statt</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU11A" name="inputU11" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU11B" name="inputU11" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S12 Es findet saisonal abhängiger Bewegungsunterricht statt. (Z.B.: Schwimmen, Schilauf, Langlauf, Eislaufen, Nordic Walken…) </b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU12A" name="inputU12" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU12B" name="inputU12" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S13 Die Schule nimmt an Schulsportwettkämpfen teil</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU13A" name="inputU13" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU13B" name="inputU13" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S14 Es gibt eine Informationsveranstaltung pro Schuljahr für Eltern zum Thema Bewegung</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU14A" name="inputU14" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU14B" name="inputU14" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S15 Es gibt Vernetzungen seitens der Schule mit öffentlichen Einrichtungen. (Z.B.: Sportvereine, Initiativen…)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU15A" name="inputU15" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU15B" name="inputU15" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S16 Mindestens ein Viertel des Lehrerkollegiums nimmt pro Schuljahr an Fortbildungsveranstaltungen mit bewegungsorientierten Inhalten teil.</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU16A" name="inputU16" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU16B" name="inputU16" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S17 Klassenbezogene Regelungen und Rituale geben einen Rahmen für ein störungsfreies Lernen</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU17A" name="inputU17" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU17B" name="inputU17" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S18 Geeignete Ess- und Regenerationsbereiche für Lehrpersonen sind vorhanden </b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU18A" name="inputU18" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU18B" name="inputU18" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S19 Die ergonomischen Aspekte eines gesunden Arbeitsplatzes werden hinsichtlich Licht, Akustik, Luft und Farbe beachtet</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU19A" name="inputU19" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU19B" name="inputU19" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S20 Ergonomisches Mobiliar ist am Arbeitsplatz für Lehrpersonen vorhanden</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU20A" name="inputU20" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU20B" name="inputU20" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S21 Es gibt an der Schule ein Angebot für Lehrpersonen mit bewegungsfördernden Inhalten. (Z.B.: Schulweg zu Fuß oder mit Fahrrad, Walkinggruppe nach dem Unterricht, Bewegungssequenzen in der Mittagspause, gemeinsame sportliche Aktivitäten wie Fußball, Volleyball...)</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU21A" name="inputU21" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU21B" name="inputU21" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S22 Es gibt Schallschutzmaßnahmen im Konferenzzimmer</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU22A" name="inputU22" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU22B" name="inputU22" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S23 Es sind ausreichend Schallschutzmaßnahmen in den Arbeitsbereichen von Lehrpersonen vorhanden</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU23A" name="inputU23" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU23B" name="inputU23" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S24 Konferenzen werden mit verbindlichen Beginn- und Schlusszeiten festgelegt</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU24A" name="inputU24" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU24B" name="inputU24" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+        <p>
+            <b>S25 Konferenzen werden mit Bewegungsimpulsen zur Steigerung der Aufmerksamkeit und Konzentration aufgelockert</b>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU25A" name="inputU25" value=1 type="Radio"> Ja</td>
+
+                </tr>
+                <tr>
+                    <td><input onclick="UpdateProgressBars()" id="inputU25B" name="inputU25" value=0 type="Radio"> Nein</td>
+
+                </tr>
+            </table>
+
+        </p>
+    </fieldset>
+
+    <hr />
+
+    <table id="points" style="width:20%">
+        <tr>
+            <td id="g1"><h5><b>Gütesiegel Teil I</b></h5></td>
+            <td><progress class="vert" id="pUone" value=0 max="10"></progress></td>
+
+        </tr>
+        <tr>
+            <td id="g2"><h5><b>Gütesiegel Teil II</b></h5></td>
+            <td><progress class="vert" id="pUtwo" value=0 max="24"></progress></td>
+
+        </tr>
+        <tr>
+            <td id="g3"><h5><b>Gütesiegel Teil III</b></h5></td>
+            <td><progress class="vert" id="pUthree" value=0 max="50"></progress></td>
+
+        </tr>
+    </table>
+    @*<hr />*@
+    <p onclick="Fertig()"><a href=@Url.Action("Uebersicht", "Home") class="btn btn-primary btn-lg">Fertig &raquo;</a></p>

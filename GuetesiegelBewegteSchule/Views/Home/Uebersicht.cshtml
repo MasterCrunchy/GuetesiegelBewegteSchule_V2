@@ -1,0 +1,197 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_Start.cshtml";
+    ViewBag.Title = "Übersicht";
+}
+
+<style>
+    progress#pUone {
+        /*color: aqua;*/
+        /*width : 30px;*/
+    }
+     
+    progress {
+        /*color : #ff6666;
+        background-color : none;*/
+        /*height: 30px;*/
+    }
+
+    div#top {
+        background-color: #b3b3b3;
+    }
+
+    div#buttom {
+        background-color: #b3b3b3;
+        padding-top: 60px;
+        text-align: center;
+    }
+
+    div#row {
+        background-color: #b3b3b3;
+        text-align: center;
+    }
+
+    p#buttonU {
+        background-color: #3398ff;
+    }
+
+    p#buttonL {
+        background-color: #408b0e;
+    }
+
+    p#buttonS {
+        background-color: #dc3d3d;
+    }
+
+    div#rowOne {
+        /**/
+    }
+
+    div#rowTwo {
+        transform: rotate(-90deg);
+        width: 350px;
+        margin: auto;
+        padding: 10px;
+    }
+
+    .progress_detail {
+        height: 30px;
+    }
+
+    .progress_sum {
+        height: 90px;
+    }
+
+    h4{
+       text-align: center;
+    }
+
+    textarea#info {
+        /*left: 100px;*/
+        display:inline-block;
+        vertical-align: middle;
+        font-size: 15px;
+        resize: both;
+        /*-webkit-border-top-left-radius: 10px;
+        -webkit-border-top-right-radius: 10px;
+        -webkit-border-bottom-left-radius: 10px;
+        -webkit-border-bottom-right-radius: 10px;*/
+    }
+
+    p#saveData {
+        position: center;
+    }
+</style>
+
+<script>
+    function SaveData() {
+        var x;
+        if (confirm("Dieser Vorgang kann nicht rückgänig gemacht werden, fortfahren?") == true) {
+            var url = '@Url.Action("DatenGespeichert", "Home")';
+            window.location.href = url;
+        } else {
+
+        }
+
+    }
+
+    /**Ersetzen mit www.gütesiegelbewegteschule.at**/
+    function buttonU() {
+        var url = '@Url.Action("Unterrichtsqualitaet", "Home")';
+        window.location.href = url;
+    }
+    function buttonL() {
+        var url = '@Url.Action("LernUndLebensraumSchule", "Home")';
+        window.location.href = url;
+    }
+    function buttonS() {
+        var url = '@Url.Action("SteuernUndOrganisieren", "Home")';
+        window.location.href = url;
+    }
+</script>
+
+<div id="top" class="jumbotron">
+    <img src="@Url.Content("~/Images/logo_bewegte_schule_klein.png")">
+
+    <h1>Übersicht</h1>
+    <h2>Kriterienliste für das Gütesiegel "Bewegte Schule Österreich"</h2>
+    <p class="lead"></p>
+
+    <p>
+        Das Schulentwicklungskonzept der "Bewegten Schule" umfasst die drei Bereiche: Lehren und Lernen, Lern- und Lebensraum Schule und Steuern und Organisieren.
+        Klicken Sie auf eine der drei Bereiche und geben Sie dort die Kriterien an, welche an Ihrer Schule erfüllt werden.
+        An den Diagrammen können Sie erkennen, wie viel von den Kriterien der Bewegten Schule in Ihrer Schule bereits umgesetzt wurden.
+    </p>
+
+    <div class="row" id="row">
+
+        <div class="col-md-4">
+            <h2></h2>
+            <p></p>
+
+            <p onclick="buttonU()" id="buttonU" class="btn btn-primary btn-lg" Lehren und Lernen &raquo;>Lehren und Lernen</p>
+            <hr />
+            <div id="rowOne">
+                <progress class="progress_detail" id="pUone" value="0" max="10"></progress><br />
+                <progress class="progress_detail" id="pUtwo" value="0" max="24"></progress><br />
+                <progress class="progress_detail" id="pUthree" value="0" max="50"></progress><br />
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h2></h2>
+            <p></p>
+
+            <p onclick="buttonL()" id="buttonL" class="btn btn-primary btn-lg" Lern- und Lebensraum Schule &raquo;>Lern- und Lebensraum Schule</p>
+            <hr />
+            <div id="rowOne">
+                <progress class="progress_detail" id="lUone" value="0" max="11"></progress><br />
+                <progress class="progress_detail" id="lUtwo" value="0" max="21"></progress><br />
+                <progress class="progress_detail" id="lUthree" value="0" max="38"></progress><br />
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h2></h2>
+            <p></p>
+
+            <p onclick="buttonS()" id="buttonS" class="btn btn-primary btn-lg" Steuern und Organisieren &raquo;>Steuern und Organisieren</p>
+            <hr />
+            <div id="rowOne">
+                <progress class="progress_detail" id="sUone" value="0" max="13"></progress><br />
+                <progress class="progress_detail" id="sUtwo" value="0" max="18"></progress><br />
+                <progress class="progress_detail" id="sUthree" value="0" max="25"></progress><br />
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="jumbotron" id="buttom">
+
+        <h2>Ihre eingegebenen Daten ergeben folgendes Gütesiegel:</h2>
+        <div>
+            <h5>Gütesiegel Teil I    Gütesiegel Teil II  Gütesiegel Teil III</h5>
+        </div>
+        <div id="rowTwo">
+            <progress class="progress_sum" id="sUone" value="0" max="100"></progress><br />
+            <progress class="progress_sum" id="sUtwo" value="0" max="100"></progress><br />
+            <progress class="progress_sum" id="sUthree" value="0" max="100"></progress><br />
+        </div>
+        <p class="lead"></p>
+        <hr />
+        <p id="saveData" onclick="SaveData()" class="btn btn-primary btn-lg" Daten speichern &raquo;>Daten speichern</p>
+    </div>
+    
+    <div id="infoDiv">
+        <h4><b>Hier können Sie ein besonders gelungenes Schulprojekt mit Inhalten der Bewegten Schule beschreiben</b></h4>
+        <textarea id="info"></textarea><br />
+        <hr />
+
+
+
+    </div>
+</div>
+
+
